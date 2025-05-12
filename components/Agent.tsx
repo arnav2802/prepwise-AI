@@ -28,6 +28,7 @@ const Agent = ({
                    feedbackId,
                    type,
                    questions,
+
                }: AgentProps) => {
     const router = useRouter();
     const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE);
@@ -123,6 +124,8 @@ const Agent = ({
                     username: userName,
                     userid: userId,
                 },
+                clientMessages: [],
+                serverMessages: [],
             });
         } else {
             let formattedQuestions = "";
@@ -136,6 +139,8 @@ const Agent = ({
                 variableValues: {
                     questions: formattedQuestions,
                 },
+                clientMessages: [],
+                serverMessages: [],
             });
         }
     };
